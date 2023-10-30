@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+{% include 'base.html' %}
+
+<body>
+    <h1>Employee List</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                <a href="{% url 'employee_detail' employee.id %}">{{ employee.first_name }} {{ employee.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_employee' %}">Add Employee</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Detail</title>
+</head>
+{% include 'base.html' %}
+
+<body>
+    
+    <h1>Employee Detail</h1>
+    <p>Name: {{ employee.first_name }} {{ employee.last_name }}</p>
+    <p>Email: {{ employee.email }}</p>
+    <p>Department: {{ employee.department }}</p>
+    <p>Start Date: {{ employee.start_date }}</p>
+    <p>Status: {% if employee.is_onboarded %}Onboarded{% else %}Not Onboarded{% endif %}</p>
+
+    <p><a href="{% url 'employee_update' employee.id %}">Update Employee</a></p>
+
+<a href="{% url 'employee_list' %}">Back to Employee List</a>
+
+
+</body>
+
+
+</html>
